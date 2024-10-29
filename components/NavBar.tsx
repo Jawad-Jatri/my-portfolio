@@ -57,7 +57,7 @@ export default function NavBar() {
             </div>
 
             <div id="menu"
-                 className={`absolute ${showMenu ? "flex" : "hidden"} p-6 rounded-lg bg-cyan left-6 right-6 top-20 z-100`}>
+                 className={`absolute ${showMenu ? "flex" : "hidden"} z-10 p-6 rounded-lg bg-cyan left-6 right-6 top-20 z-100`}>
                 <div
                     className="flex flex-col items-center justify-center w-full space-y-3 font-bold text-white rounded-sm">
                     {links.map((link, index) => (

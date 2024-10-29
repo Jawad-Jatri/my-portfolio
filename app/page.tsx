@@ -1,6 +1,8 @@
+import Photo from "@/components/Photo";
+
 export default function Home() {
     return (
-        <div className="container flex flex-col-reserve mx-auto p-6 lg:flex-row">
+        <div className="container flex flex-col-reverse mx-auto p-6 lg:flex-row  items-center justify-between">
             <div className="flex flex-col space-y-2 md-44 lg:mt-16 xl:mb-52 lg:w-1/2">
                 <h5 className="text-center text-cyanLight lg:text-left">Full stack software
                     developer</h5>
@@ -24,11 +26,11 @@ export default function Home() {
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
-                            stroke-width="2"
+                            strokeWidth="2"
                         >
                             <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 d="M4 16v4h16v-4m-8-1V4m-5 8l5 5 5-5"
                             />
                         </svg>
@@ -43,16 +45,19 @@ export default function Home() {
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
-                            stroke-width="2"
+                            strokeWidth="2"
                         >
                             <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 d="M3 8l7.293 4.293a1 1 0 0 0 1.414 0L19 8m2 0v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m14 0H7"
                             />
                         </svg>
                     </button>
                 </div>
+            </div>
+            <div className="flex space-y-2 mb-10 lg:mt-16 xl:mb-52 lg:w-1/2 items-center justify-center">
+                <Photo/>
             </div>
         </div>
     );
