@@ -1,11 +1,17 @@
 import type {Metadata} from "next";
-import {Poppins} from "next/font/google";
+import {Oxanium, Poppins} from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
 const poppins = Poppins({
     weight: ["100", "200", "400", "700"],
     style: ['normal', 'italic'],
+    subsets: ['latin']
+});
+
+const oxanium = Oxanium({
+    weight: ["200", "400", "700"],
+    style: ['normal'],
     subsets: ['latin']
 });
 
@@ -22,7 +28,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={`${poppins.className} bg-amber-100`}
+            className={`${poppins.className} bg-darkViolet`}
         >
         <NavBar/>
         {children}
