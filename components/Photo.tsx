@@ -16,7 +16,7 @@ const Photo = () => {
                     }
                 }}>
                 {/* Image with rounded corners */}
-                <Image src="/assets/my-photo.jpg" alt="my-photo" priority quality={100} fill
+                <Image src="/assets/photo.jpg" alt="my-photo" priority quality={100} fill
                        className="rounded-full object-cover border-4 border-transparent"/>
             </motion.div>
             {/* Animated SVG Border */}
