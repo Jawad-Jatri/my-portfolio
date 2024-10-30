@@ -97,9 +97,9 @@ export default function NavBar() {
                                                                  height={link.height}/></Link>
                     ))}
                 </div>
-                <div className="md:hidden">
+                <div className="lg:hidden">
                     <button id="menu-btn" type="button" onClick={toggleMenu}
-                            className={`${showMenu ? "open" : ""} z-40 block hamburger xl:hidden focus:outline-none`}>
+                            className={`${showMenu ? "open" : ""} z-40 block hamburger lg:hidden focus:outline-none`}>
                         <span className="hamburger-top"></span>
                         <span className="hamburger-middle"></span>
                         <span className="hamburger-bottom"></span>
