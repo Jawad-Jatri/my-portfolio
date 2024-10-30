@@ -14,20 +14,59 @@ const links = [
 ]
 
 const socialLinks = [
-    {url: "/", title: "Facebook", icon: "./icon-facebook.svg", width: 25, height: 25},
-    {url: "/", title: "Gmail", icon: "./icon-gmail.svg", width: 25, height: 25},
-    {url: "/", title: "Linkedin", icon: "./icon-linkedin.svg", width: 25, height: 25},
-    {url: "/", title: "Github", icon: "./icon-github.svg", width: 25, height: 25},
-    {url: "/", title: "Whatsapp", icon: "./icon-whatsapp.svg", width: 25, height: 25},
+    {
+        url: "https://www.facebook.com/akiljawad10/", title: "Facebook", icon: "./icon-facebook.svg",
+        tooltip: "Facebook: Akil Jawad", width: 25, height: 25
+    },
+    {
+        url: `mailto:akil.jawad976@gmail.com`,
+        title: "Gmail",
+        icon: "./icon-gmail.svg",
+        tooltip: "Mail: akil.jawad976@gmail.com",
+        width: 25,
+        height: 25
+    },
+    {
+        url: "https://www.linkedin.com/in/akil-jawad/",
+        title: "Linkedin",
+        icon: "./icon-linkedin.svg",
+        tooltip: "Linkedin: akil-jawad",
+        width: 25,
+        height: 25
+    },
+    {
+        url: "https://github.com/Jawad-Jatri", title: "Github", icon: "./icon-github.svg",
+        tooltip: "Github: Jawad-Jatri", width: 25, height: 25,
+    },
+    {
+        url: "https://wa.me/01785604316", title: "Whatsapp", icon: "./icon-whatsapp.svg",
+        tooltip: "Whatsapp: 01785604316", width: 25, height: 25
+    },
 ]
 export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
+    const [showTooltip, setShowTooltip] = useState(false);
+    const [showToolMsg, setShowToolMsg] = useState("");
+    const [tooltipPosition, setTooltipPosition] = useState({x: 0, y: 0})
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     }
     return (
         <nav className="relative container mx-auto px-6">
+            {showTooltip && (
+                <div
+                    style={{
+                        position: "fixed",
+                        top: tooltipPosition.y + 15,
+                        left: tooltipPosition.x + 15,
+                        pointerEvents: "none"
+                    }}
+                    className="px-2 py-1 bg-gray-700 text-white text-sm rounded-lg shadow-lg"
+                >
+                    {showToolMsg}
+                </div>
+            )}
             <div className="flex items-center justify-between w-full lg:w-auto">
                 <Link href="/"><Image
                     className="transition-transform hover:scale-110 hover:opacity-90 duration-300 ease-in-out"
@@ -42,6 +81,19 @@ export default function NavBar() {
                 <div className="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
                     {socialLinks.map((link, index) => (
                         <Link href={link.url} key={index}><Image alt="" className="ficon" src={link.icon}
+                                                                 onMouseEnter={(e) => {
+                                                                     setShowTooltip(true)
+                                                                     setTooltipPosition({
+                                                                         x: e.clientX,
+                                                                         y: e.clientY
+                                                                     })
+                                                                     setShowToolMsg(link.tooltip)
+                                                                 }}
+                                                                 onMouseMove={(e) => setTooltipPosition({
+                                                                     x: e.clientX,
+                                                                     y: e.clientY
+                                                                 })}
+                                                                 onMouseLeave={() => setShowTooltip(false)}
                                                                  width={link.width}
                                                                  height={link.height}/></Link>
                     ))}
