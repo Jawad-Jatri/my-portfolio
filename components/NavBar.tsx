@@ -6,7 +6,6 @@ import NavMenuLink from "@/components/NavMenuLink";
 import {useState} from "react";
 
 const links = [
-    {url: "/", title: "Home"},
     {url: "/about", title: "About"},
     {url: "/skills", title: "Skills"},
     {url: "/works", title: "Works"},
@@ -67,7 +66,7 @@ export default function NavBar() {
                     {showToolMsg}
                 </div>
             )}
-            <div className="flex items-center justify-between w-full lg:w-auto">
+            <div className="flex items-center justify-between w-full lg:w-auto xl:mx-20">
                 <Link href="/"><Image
                     className="transition-transform hover:scale-110 hover:opacity-90 duration-300 ease-in-out"
                     src="./logo.svg" alt="" width={100} height={100}/></Link>
@@ -100,7 +99,7 @@ export default function NavBar() {
                 </div>
                 <div className="md:hidden">
                     <button id="menu-btn" type="button" onClick={toggleMenu}
-                            className={`${showMenu ? "open" : ""} z-40 block hamburger md:hidden focus:outline-none`}>
+                            className={`${showMenu ? "open" : ""} z-40 block hamburger xl:hidden focus:outline-none`}>
                         <span className="hamburger-top"></span>
                         <span className="hamburger-middle"></span>
                         <span className="hamburger-bottom"></span>
