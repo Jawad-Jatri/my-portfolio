@@ -33,7 +33,7 @@ export default function Contact() {
             }}
             className="py-6"
         >
-            <div className="container mx-auto">
+            <div className="container mx-auto p-6">
                 <div className="flex flex-col xl:flex-row gap-[30px] xl:mx-20">
                     <div className="xl:h-[54%] order-2 xl:order-none">
                         <form action="" className="flex flex-col gap-6 p-10 bg-violet rounded-md m-2">
